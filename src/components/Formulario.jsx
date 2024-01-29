@@ -62,7 +62,7 @@ export const Formulario = ({setEstado,idMetro}) => {
         try {
 
             if(form.id){
-                const url = `http://localhost:3000/metro/${form.id}`
+                const url = `https://apimocha.com/metrogob/rutas/${form.id}`
                 await fetch(url,{
                     method:'PUT',
                     body:JSON.stringify(form),
@@ -77,7 +77,7 @@ export const Formulario = ({setEstado,idMetro}) => {
                 }, 1000)
             }
             else{
-                const url ="http://localhost:3000/metro"
+                const url ="https://apimocha.com/metrogob/rutas/"
                             form.id = uuidv4()
                 await fetch(url,{
                     method:'POST',

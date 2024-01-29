@@ -11,7 +11,7 @@ const Listar = ({ estado,setIdmetro }) => {
         if (estado || rutas.length >= 0) {
             (async function () {
                 try {
-                    const respuesta = await (await fetch("http://localhost:3000/metro")).json()
+                    const respuesta = await (await fetch("https://apimocha.com/metrogob/rutas")).json()
                     setRutas(respuesta)
                     console.log("petición");
                 }
@@ -26,7 +26,7 @@ const Listar = ({ estado,setIdmetro }) => {
         try {
             const confirmar = confirm("Vas a aliminar una ruta")
             if (confirmar) {
-                const url = `http://localhost:3000/metro/${id}`
+                const url = `https://apimocha.com/metrogob/rutas/${id}`
                 await fetch(url, {
                     method: 'DELETE',
                 })
